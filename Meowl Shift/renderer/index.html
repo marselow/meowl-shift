@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.rbxcdn.com;" />
+  <title>Meowl Shift</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-ok" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7be0ad"/><stop offset="1" stop-color="#3aa772"/></linearGradient>
+      <linearGradient id="g-bad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f59095"/><stop offset="1" stop-color="#d44c54"/></linearGradient>
+    </defs>
+    <symbol id="i-key" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.6 7.6a5.5 5.5 0 1 1-7.8 7.8 5.5 5.5 0 0 1 7.8-7.8zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-checkall" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+    <symbol id="i-add" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+    <symbol id="i-hex" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  </svg>
+
+  <div id="lock" class="lock">
+    <div class="lock-card">
+      <div class="lock-logo"><img src="assets/logo.png" alt="" draggable="false"></div>
+      <div class="lock-brand">Meowl Shift</div>
+      <h1 id="lock-title">Unlock vault</h1>
+      <p id="lock-sub" class="lock-sub">Enter your master password.</p>
+      <div class="lock-fields">
+        <input id="pw1" type="password" placeholder="Password" autofocus />
+        <input id="pw2" type="password" placeholder="Repeat password" style="display:none" />
+      </div>
+      <p id="lock-err" class="err"></p>
+      <button id="lock-btn" class="btn btn-primary btn-block">Enter</button>
+      <div class="lock-foot"><svg class="ic xs"><use href="#i-shield"/></svg> Encrypted locally with your master password</div>
+    </div>
+  </div>
+
+  <div id="app" class="app" style="display:none">
+    <aside class="side">
+      <div class="brand">
+        <div class="logo"><img src="assets/logo.png" alt="" draggable="false"></div>
+        <div class="brand-text"><b>Meowl Shift</b><span>Roblox account manager</span></div>
+      </div>
+      <nav class="nav-list">
+        <div class="nav-label">Menu</div>
+        <a class="nav active" data-scroll="top" title="Dashboard"><svg class="ic"><use href="#i-grid"/></svg><span>Dashboard</span></a>
+        <a class="nav" data-scroll="sec-accounts" title="Accounts"><svg class="ic"><use href="#i-users"/></svg><span>Accounts</span><em class="nav-count" id="nav-count">0</em></a>
+        <a class="nav" data-scroll="sec-proxy" title="Proxy"><svg class="ic"><use href="#i-globe"/></svg><span>Proxy</span><i class="nav-dot" id="nav-proxy-dot"></i></a>
+        <div class="nav-label">System</div>
+        <a class="nav" id="nav-settings" title="Settings"><svg class="ic"><use href="#i-cog"/></svg><span>Settings</span></a>
+      </nav>
+      <div class="usercard">
+        <div class="avatar"><span id="uc-av">U</span><i class="presence"></i></div>
+        <div class="uc-text"><b id="uc-name">User</b><div class="uc-sub"><svg class="ic xs"><use href="#i-lock"/></svg> Vault unlocked</div></div>
+      </div>
+    </aside>
+
+    <div class="main" id="main">
+      <header class="topbar">
+        <label class="search">
+          <svg class="ic sm"><use href="#i-search"/></svg>
+          <input id="search" type="text" placeholder="Search account..." />
+          <kbd>Ctrl K</kbd>
+        </label>
+        <div class="top-actions">
+          <div id="region-chip" class="chip neutral"><i class="chip-dot"></i><span>Proxy not tested</span></div>
+          <button class="iconbtn" id="bell" type="button" title="No alerts"><svg class="ic"><use href="#i-bell"/></svg><i class="bell-dot" id="bell-dot"></i></button>
+          <div class="top-sep"></div>
+          <div class="avatar avatar-sm" id="top-av">U</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="page-head reveal" id="top" style="--i:0">
+          <div>
+            <div class="eyebrow" id="today">Dashboard</div>
+            <h1>Accounts overview</h1>
+            <div class="sub">Manage, validate and refresh your Roblox cookies</div>
+          </div>
+        </section>
+
+        <div class="kpis">
+          <div class="kpi kpi-feature reveal" style="--i:1">
+            <div class="kpi-label">Total accounts</div>
+            <div class="kpi-row">
+              <div class="num" id="kpi-total">0</div>
+              <span class="kpi-icon gold"><svg class="ic"><use href="#i-users"/></svg></span>
+            </div>
+            <div class="kpi-foot" id="kpi-total-sub">Add your first account</div>
+          </div>
+          <div class="kpi reveal" style="--i:2">
+            <div class="kpi-label">Active cookies</div>
+            <div class="kpi-row">
+              <div class="num-group"><div class="num" id="kpi-active">0</div><span id="kpi-pct" class="trend ok">0%</span></div>
+              <span class="kpi-icon ok"><svg class="ic"><use href="#i-check"/></svg></span>
+            </div>
+            <div class="meter" title="Share of accounts with an active cookie"><i id="kpi-meter"></i></div>
+          </div>
+          <div class="kpi reveal" id="kpi-dead-card" style="--i:3">
+            <div class="kpi-label">Needs attention</div>
+            <div class="kpi-row">
+              <div class="num" id="kpi-dead">0</div>
+              <span class="kpi-icon bad"><svg class="ic"><use href="#i-alert"/></svg></span>
+            </div>
+            <div class="kpi-foot" id="kpi-dead-sub">All cookies healthy</div>
+          </div>
+          <div class="kpi reveal" style="--i:4">
+            <div class="kpi-label">Global proxy</div>
+            <div class="kpi-row">
+              <div class="num small" id="kpi-proxy">Not set</div>
+              <span class="kpi-icon gold"><svg class="ic"><use href="#i-globe"/></svg></span>
+            </div>
+            <div class="kpi-foot" id="kpi-proxy-sub">Used when no own proxy</div>
+          </div>
+        </div>
+
+        <section class="panel panel-feature reveal" id="sec-accounts" style="--i:5">
+          <div class="panel-head">
+            <div class="ph-title">
+              <h3>Accounts <span class="count" id="acc-count">0</span></h3>
+              <p>Validate, refresh, copy and open isolated sessions</p>
+            </div>
+            <div class="head-actions">
+              <button class="btn btn-ghost" id="btn-validate-all"><svg class="ic sm"><use href="#i-checkall"/></svg> Validate all</button>
+              <button class="btn btn-ghost" id="btn-refresh-all" type="button" title="Generate a new cookie for every valid account through its proxy"><svg class="ic sm"><use href="#i-refresh"/></svg> Refresh all</button>
+              <button class="btn btn-primary" id="btn-add"><svg class="ic sm"><use href="#i-add"/></svg> Add account</button>
+            </div>
+          </div>
+          <div class="toolbar">
+            <div class="seg" id="filter" role="tablist">
+              <button class="seg-btn active" data-filter="all" type="button">All <em id="fc-all">0</em></button>
+              <button class="seg-btn" data-filter="ok" type="button"><i class="seg-dot ok"></i>Active <em id="fc-ok">0</em></button>
+              <button class="seg-btn" data-filter="bad" type="button"><i class="seg-dot bad"></i>Invalid <em id="fc-bad">0</em></button>
+              <button class="seg-btn" data-filter="un" type="button"><i class="seg-dot un"></i>Unchecked <em id="fc-un">0</em></button>
+            </div>
+            <div class="toolbar-right">
+              <div class="toolbar-meta" id="showing">Showing 0 of 0</div>
+              <button class="btn btn-ghost btn-del-all" id="btn-delete-all" type="button" title="Remove every account from the vault"><svg class="ic sm"><use href="#i-trash"/></svg> Delete all</button>
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table class="grid">
+              <thead><tr><th>Account</th><th>Status</th><th>Robux</th><th>Proxy</th><th class="ta-r">Actions</th></tr></thead>
+              <tbody id="rows"></tbody>
+            </table>
+            <div id="empty" class="empty">
+              <div class="empty-icon"><svg class="ic"><use href="#i-inbox"/></svg></div>
+              <b id="empty-title">No accounts yet</b>
+              <p id="empty-sub">Click <b>Add account</b> to store your first cookie.</p>
+              <button class="btn btn-ghost" id="empty-add" type="button"><svg class="ic sm"><use href="#i-add"/></svg> Add account</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="row2">
+          <section class="panel reveal" style="--i:6">
+            <div class="panel-head">
+              <div class="ph-title"><h3>Status breakdown</h3><p>Cookie health across the vault</p></div>
+            </div>
+            <div class="donut-wrap">
+              <div class="donut">
+                <svg viewBox="0 0 42 42" id="donut">
+                  <circle class="donut-track" cx="21" cy="21" r="15.9155"/>
+                  <circle id="arc-ok" class="arc arc-ok" cx="21" cy="21" r="15.9155"/>
+                  <circle id="arc-bad" class="arc arc-bad" cx="21" cy="21" r="15.9155"/>
+                </svg>
+                <div class="donut-center"><b id="donut-n">0</b><span>accounts</span></div>
+              </div>
+              <div class="legend">
+                <div class="li"><span class="sw ok"></span><span class="lbl-t">Active</span><b id="lg-ok">0</b><em id="lg-ok-p">0%</em></div>
+                <div class="li"><span class="sw bad"></span><span class="lbl-t">Invalid</span><b id="lg-bad">0</b><em id="lg-bad-p">0%</em></div>
+                <div class="li"><span class="sw un"></span><span class="lbl-t">Unchecked</span><b id="lg-un">0</b><em id="lg-un-p">0%</em></div>
+              </div>
+            </div>
+            <div class="lastcheck never" id="lastcheck">
+              <div class="rt-left">
+                <span class="rt-icon"><svg class="ic"><use href="#i-clock"/></svg></span>
+                <div class="rt-text"><div class="kpi-label">Last verified</div><div class="rt-sub" id="lv-sub">No accounts yet</div></div>
+              </div>
+              <div class="lv-right">
+                <div class="rt-num lv-num"><span id="lv-when">&mdash;</span></div>
+                <button type="button" class="mini lv-btn" id="lv-run" data-tip="Validate all" aria-label="Validate all"><svg class="ic"><use href="#i-checkall"/></svg></button>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel reveal" id="sec-proxy" style="--i:7">
+            <div class="panel-head">
+              <div class="ph-title"><h3>Global proxy</h3><p>Used by all accounts without their own proxy</p></div>
+              <span id="proxy-badge" class="pill g">Not tested</span>
+            </div>
+            <div class="proxycard">
+              <label class="field mono-field">
+                <svg class="ic sm"><use href="#i-globe"/></svg>
+                <input id="gproxy" type="text" placeholder="http://user:pass@ip:port" spellcheck="false" />
+              </label>
+              <div class="proxyrow">
+                <button class="btn btn-ghost grow" id="gproxy-test"><svg class="ic sm"><use href="#i-globe"/></svg> Test</button>
+                <button class="btn btn-primary grow" id="gproxy-save"><svg class="ic sm"><use href="#i-save"/></svg> Save</button>
+              </div>
+              <div class="pstat">
+                <div class="it"><span class="it-ic"><svg class="ic"><use href="#i-pin"/></svg></span><span class="it-l">Country</span><b id="p-country">-</b></div>
+                <div class="it"><span class="it-ic"><svg class="ic"><use href="#i-lock"/></svg></span><span class="it-l">HTTPS</span><b id="p-https">-</b></div>
+                <div class="it"><span class="it-ic"><svg class="ic"><use href="#i-server"/></svg></span><span class="it-l">Type</span><b id="p-type">-</b></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <footer class="statusbar" id="statusbar">
+        <i class="sb-dot"></i>
+        <span id="status" class="status">Ready.</span>
+        <span class="sb-right"><svg class="ic xs"><use href="#i-shield"/></svg> Local encrypted vault</span>
+      </footer>
+    </div>
+  </div>
+
+  <div id="settings" class="modal-bg" style="display:none">
+    <div class="modal modal-settings" role="dialog" aria-labelledby="settings-title">
+      <div class="modal-head">
+        <div class="mh-title">
+          <span class="mh-icon"><svg class="ic"><use href="#i-cog"/></svg></span>
+          <div><h2 id="settings-title">Settings</h2><p>Preferences are saved on this PC</p></div>
+        </div>
+        <button class="icon-btn" id="settings-x" type="button" aria-label="Close"><svg class="ic"><use href="#i-close"/></svg></button>
+      </div>
+      <div class="modal-body set-body">
+        <div class="set-group">
+          <div class="set-label">Display</div>
+          <label class="set-row">
+            <span class="set-text"><b>Roblox avatars</b><em>Show each account's headshot in the table</em></span>
+            <input type="checkbox" class="switch" id="pref-avatars" />
+          </label>
+          <label class="set-row">
+            <span class="set-text"><b>Reduce animations</b><em>Turn off counters, fades and pulses</em></span>
+            <input type="checkbox" class="switch" id="pref-motion" />
+          </label>
+        </div>
+        <div class="set-group">
+          <div class="set-label">Verification</div>
+          <div class="set-row">
+            <span class="set-text"><b>Recheck cookies after</b><em>Older checks are flagged in Last verified</em></span>
+            <select id="pref-recheck" class="set-select">
+              <option value="6">6 hours</option>
+              <option value="12">12 hours</option>
+              <option value="24">24 hours</option>
+              <option value="48">2 days</option>
+              <option value="168">7 days</option>
+            </select>
+          </div>
+        </div>
+        <div class="set-group">
+          <div class="set-label">Network</div>
+          <div class="set-row">
+            <span class="set-text"><b>Adding an account</b><em>The cookie is identified over this PC's own connection</em></span>
+            <span class="set-val"><svg class="ic xs"><use href="#i-monitor"/></svg>PC network</span>
+          </div>
+          <div class="set-row">
+            <span class="set-text"><b>Validate, refresh and browser</b><em>The account's own proxy, otherwise the global proxy</em></span>
+            <span class="set-val gold"><svg class="ic xs"><use href="#i-globe"/></svg>Proxy</span>
+          </div>
+        </div>
+        <div class="set-group">
+          <div class="set-label">Vault</div>
+          <div class="set-row">
+            <span class="set-text"><b>Data folder</b><em class="mono" id="set-path">&mdash;</em></span>
+            <button class="btn btn-ghost set-btn" id="set-open" type="button"><svg class="ic sm"><use href="#i-inbox"/></svg> Open</button>
+          </div>
+          <div class="set-row">
+            <span class="set-text"><b>Encryption</b><em>AES-256 with your master password. It cannot be recovered if forgotten.</em></span>
+            <span class="set-val ok"><svg class="ic xs"><use href="#i-lock"/></svg>On</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot set-foot">
+        <span class="set-about"><img src="assets/logo.png" alt="" draggable="false" /><span id="set-about">Meowl Shift</span></span>
+        <button class="btn btn-primary" id="settings-done" type="button">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal-bg" style="display:none">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="mh-title">
+          <span class="mh-icon"><svg class="ic"><use href="#i-user-plus"/></svg></span>
+          <div><h2 id="modal-title">Add account</h2><p>Saved encrypted in your local vault</p></div>
+        </div>
+        <button class="icon-btn" id="modal-x" type="button" aria-label="Close"><svg class="ic"><use href="#i-close"/></svg></button>
+      </div>
+      <div class="modal-body">
+        <label class="lbl lbl-row" for="f-cookie"><span class="lbl-t" id="f-cookie-lbl">Cookies (.ROBLOSECURITY), one per line</span><em class="cookie-count" id="f-count"></em></label>
+        <textarea id="f-cookie" class="mono" rows="6" spellcheck="false" wrap="off" placeholder="_|WARNING:-DO-NOT-SHARE-THIS...  (one cookie per line)"></textarea>
+        <label class="lbl" for="f-proxy"><span class="lbl-t" id="f-proxy-lbl">Proxy for these accounts</span> <span>(optional)</span></label>
+        <input id="f-proxy" class="mono" type="text" spellcheck="false" placeholder="leave empty to use global proxy" />
+        <div class="hint"><svg class="ic xs"><use href="#i-info"/></svg> On save, the account is identified over your PC's own network (never the proxy).</div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-ghost" id="modal-cancel">Cancel</button>
+        <button class="btn btn-primary" id="modal-save"><svg class="ic sm"><use href="#i-save"/></svg> <span id="modal-save-t">Save</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg" class="modal-bg" style="display:none">
+    <div class="modal modal-sm">
+      <div class="modal-head">
+        <div class="mh-title">
+          <span class="mh-icon" id="dlg-icon"><svg class="ic"><use href="#i-info"/></svg></span>
+          <h2 id="dlg-title">Notice</h2>
+        </div>
+      </div>
+      <p id="dlg-msg" class="dlg-msg"></p>
+      <div class="modal-foot" id="dlg-foot"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
